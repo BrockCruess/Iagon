@@ -1,9 +1,6 @@
 ############################################################
 
-# Set your operating system - options: freebsd, linux, macos
-os=linux
-
-# Set your Iagon node directory
+# Set your Iagon node file directory
 directory=$HOME/iagon
 
 # Don't forget to make this .sh file executable with "chmod +x iag-cli-updater.sh"
@@ -11,11 +8,46 @@ directory=$HOME/iagon
 
 ############################################################
 
+uname=$(uname)
+
+if test "$uname" = "FreeBSD"
+then os=freebsd
+fi
+
+if test "$uname" = "Linux"
+then os=linux
+fi
+
+if test "$uname" = "Darwin"
+then os=macos
+fi
+
 latest=$(curl https://api.github.com/repos/Iagonorg/mainnet-node-CLI/releases/latest | grep -o -P -m 1 'v.{0,5}') && \
 cd $directory && \
-./iag-cli-$os stop && \
-mv iag-cli-$os iag-cli-$os.bak && \
+current=v$(./iag-cli-$os --version) && \
+if test "$current" = "$latest"
+then
+    echo && \
+echo "***********************" && \
+echo "No new update available" && \
+echo "***********************" && \
+echo 
+else
+    ./iag-cli-$os stop && \
+mv iag-cli-$os iag-cli-$os.$current.bak && \
 wget "https://github.com/Iagonorg/mainnet-node-CLI/releases/download/$latest/iag-cli-$os" && \
 chmod +x iag-cli-$os && \
 ./iag-cli-$os start && \
-./iag-cli-$os --version
+new=v$(./iag-cli-$os --version) && \
+echo && \
+echo "******************" && \
+echo Iagon Node updated && \
+echo "******************" && \
+echo && \
+echo Old version: && \
+echo $current && \
+echo && \
+echo New version: && \
+echo $new && \
+echo 
+fi
