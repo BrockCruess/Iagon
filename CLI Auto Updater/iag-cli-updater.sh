@@ -4,7 +4,7 @@
 directory=$HOME/iagon
 
 # Don't forget to make this .sh file executable with "chmod +x iag-cli-updater.sh"
-# Run this any time Iagon announces a new cli node update, or set up a cronjob to run it weekly/monthly "crontab -e"
+# Run this any time Iagon announces a new cli node update, or set up a cronjob to run it daily/weekly/monthly "crontab -e"
 
 ############################################################
 
