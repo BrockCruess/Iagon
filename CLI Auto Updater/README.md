@@ -5,11 +5,11 @@ To download the CLI Updater script, run this command in the directory where you 
 ```
 wget https://github.com/BrockCruess/iagon/blob/main/CLI%20Auto%20Updater/iag-cli-updater.sh && chmod +x iag-cli-updater.sh && nano iag-cli-updater.sh
 ```
-When prompted, set your Iagon node file directory:
+When the text editor opens, replace this path with your Iagon node file directory:
 
 `directory=$HOME/iagon`
 
-Then press `ctrl+x` to exit the text editor, `y` to confirm modifications, and `enter` to confirm the same file name.
+Then press `Ctrl + x` to exit the text editor, `y` to confirm modifications, and `Enter` to confirm the same file name.
 
 Run this script any time Iagon announces a new cli node update:
 
