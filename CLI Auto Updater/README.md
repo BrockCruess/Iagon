@@ -9,6 +9,8 @@ When prompted, set your Iagon node file directory:
 
 `directory=$HOME/iagon`
 
+Then press `ctrl+x` to exit the text editor, `y` to confirm modifications, and `enter` to confirm the same file name.
+
 Run this script any time Iagon announces a new cli node update:
 
 ```
