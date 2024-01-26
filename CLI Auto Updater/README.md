@@ -9,7 +9,7 @@ When the text editor opens, replace this path with your Iagon node file director
 
 `directory=$HOME/iagon`
 
-Then press `Ctrl + x` to exit the text editor, `y` to confirm modifications, and `Enter` to confirm the same file name.
+Press `Ctrl + x` to exit the text editor, then `y` to confirm modifications, and finally `Enter` to confirm the same file name.
 
 Run this script any time Iagon announces a new cli node update:
 
