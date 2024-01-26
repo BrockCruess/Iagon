@@ -26,7 +26,7 @@ chmod +x iag-cli-$os && \
 ./iag-cli-$os start && \
 new=v$(./iag-cli-$os --version) && \
 time=$(date) && \
-echo "$time: Reverted from $current > $new" >> updates.log && \
+echo "$time: Reverted from $current --> $new" >> updates.log && \
 echo " " >> updates.log &&\
 echo && \
 echo "*******************" && \
