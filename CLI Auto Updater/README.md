@@ -3,7 +3,7 @@ This script is useful if you don't run iag-cli as a service, but rather from a s
 To download the CLI Updater script, run this command in the directory where you want to store it (ideally your home directory):
 
 ```
-wget https://github.com/BrockCruess/iagon/blob/main/CLI%20Auto%20Updater/iag-cli-updater.sh && chmod +x iag-cli-updater.sh && nano iag-cli-updater.sh
+wget https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Auto%20Updater/iag-cli-updater.sh && chmod +x iag-cli-updater.sh && nano iag-cli-updater.sh
 ```
 When the text editor opens, replace this path with your Iagon node file directory:
 
