@@ -40,6 +40,9 @@ wget "https://github.com/Iagonorg/mainnet-node-CLI/releases/download/$latest/iag
 chmod +x iag-cli-$os && \
 ./iag-cli-$os start && \
 new=v$(./iag-cli-$os --version) && \
+time=$(date) && \
+echo "$time: Updated from $current > $new" >> updates.log && \
+echo " " >> updates.log &&\
 echo && \
 echo "******************" && \
 echo "Iagon Node updated" && \
