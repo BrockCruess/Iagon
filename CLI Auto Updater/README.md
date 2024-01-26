@@ -1,3 +1,5 @@
+**DOES NOT WORK FOR WINDOWS CLI VERSION**
+
 This script is useful if you don't run iag-cli as a service, but rather from a scheduled command or shell script.
 
 To download the CLI Updater script, run this command in the directory where you want to store it (ideally your home directory):
@@ -10,6 +12,7 @@ When the text editor opens, replace this path with your Iagon node file director
 `directory=$HOME/iagon`
 
 Press `Ctrl + x` to exit Nano text editor, then `y` to confirm modifications, and finally `Enter` to confirm the same file name.
+
 
 Run this script any time Iagon announces a new cli node update:
 
