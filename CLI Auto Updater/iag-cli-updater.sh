@@ -13,14 +13,14 @@ uname=$(uname)
 
 if test "$uname" = "FreeBSD"
 then os=freebsd
-fi
-
+else
 if test "$uname" = "Linux"
 then os=linux
-fi
-
+else
 if test "$uname" = "Darwin"
 then os=macos
+fi
+fi
 fi
 
 latest=$(curl https://api.github.com/repos/Iagonorg/mainnet-node-CLI/releases/latest | grep -o -P -m 1 'v.{0,5}') && \
