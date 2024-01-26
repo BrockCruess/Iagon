@@ -41,13 +41,13 @@ chmod +x iag-cli-$os && \
 new=v$(./iag-cli-$os --version) && \
 echo && \
 echo "******************" && \
-echo Iagon Node updated && \
+echo "Iagon Node updated" && \
 echo "******************" && \
 echo && \
-echo Old version: && \
+echo "Old version:" && \
 echo $current && \
 echo && \
-echo New version: && \
+echo "New version:" && \
 echo $new && \
 echo 
 fi
