@@ -14,25 +14,8 @@ Run this script any time Iagon announces a new cli node update:
 ./iag-cli-updater.sh
 ```
 
-Or set up a cronjob to run it daily/weekly/monthly by running this command:
+Or set up a cronjob to run it daily by running this command:
 
 ```
-crontab -e
-```
-
-Add one of these lines at the bottom:
-
-```
-#Iagon CLI Node Daily Update:
-0 0 * * * /your/iagon/directory/iag-cli-updater.sh
-```
-
-```
-#Iagon CLI Node Weekly Update:
-0 0 * * 0 /your/iagon/directory/iag-cli-updater.sh
-```
-
-```
-#Iagon CLI Node Monthly Update:
-0 0 1 * * /your/path/to/iag-cli-updater.sh
+(crontab -l ; echo "0 0 * * * /your/iagon/directory/iag-cli-updater.sh")| crontab -
 ```
