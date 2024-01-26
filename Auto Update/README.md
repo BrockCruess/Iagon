@@ -1,3 +1,5 @@
+This script is useful if you don't run iag-cli as a service, but rather from a scheduled command or shell script.
+
 To download the CLI Updater script, run this command in the directory where you want to store it (ideally your home directory):
 
 ```
