@@ -2,7 +2,7 @@
 
 *This script is useful if you don't run iag-cli as a service, but rather from a scheduled command or shell script.*
 
-To download the CLI Updater script, run this command in the directory where your iag-cli node file is stored:
+To download the CLI Auto Updater script, run this command in the directory where your iag-cli node file is stored:
 
 ```
 curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Auto%20Updater/iag-cli-updater.sh > iag-cli-updater.sh && chmod +x iag-cli-updater.sh
