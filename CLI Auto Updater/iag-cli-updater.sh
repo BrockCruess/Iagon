@@ -8,6 +8,7 @@ directory=$HOME/iagon
 
 ############################################################
 
+cd $directory && \
 uname=$(uname)
 
 if test "$uname" = "FreeBSD"
@@ -23,8 +24,8 @@ then os=macos
 fi
 
 latest=$(curl https://api.github.com/repos/Iagonorg/mainnet-node-CLI/releases/latest | grep -o -P -m 1 'v.{0,5}') && \
-cd $directory && \
 current=v$(./iag-cli-$os --version) && \
+
 if test "$current" = "$latest"
 then
     echo && \
