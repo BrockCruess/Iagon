@@ -20,13 +20,13 @@ current=v$(./iag-cli-$os --version) && \
 
 if test "$current" = "$latest"
 then
-    echo && \
+echo && \
 echo "***********************" && \
 echo "No new update available" && \
 echo "***********************" && \
 echo 
 else
-    ./iag-cli-$os stop && \
+./iag-cli-$os stop && \
 mv iag-cli-$os iag-cli-$os.$current.bak && \
 wget "https://github.com/Iagonorg/mainnet-node-CLI/releases/download/$latest/iag-cli-$os" && \
 chmod +x iag-cli-$os && \
