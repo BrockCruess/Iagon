@@ -1,3 +1,4 @@
+# Don't forget to make this .sh file executable with "chmod +x revert-update.sh"
 # Run this script in the same directory as your iag-cli node file to go back one node version
 uname=$(uname)
 
