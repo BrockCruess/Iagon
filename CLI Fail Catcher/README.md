@@ -2,7 +2,7 @@
 
 *This script is useful if you don't run iag-cli as a service, but rather from a scheduled command or shell script.*
 
-Run this command with **your** script file path to download the CLI Fail Catcher script and schedule it as a crontab job to run every half hour:
+Run this command with **your** iag-cli-* file directory to download the CLI Fail Catcher script and schedule it as a crontab job to run every half hour:
 
 ```
 # Put your node directory after "iagDirectory=", with no slash at the end:
