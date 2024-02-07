@@ -27,6 +27,7 @@ echo "No new update available" && \
 echo "***********************" && \
 echo 
 else
+cd "$(dirname "$0")" && \
 ./iag-cli-$os stop && \
 mv iag-cli-$os iag-cli-$os.$current.bak && \
 wget "https://github.com/Iagonorg/mainnet-node-CLI/releases/download/$latest/iag-cli-$os" && \
