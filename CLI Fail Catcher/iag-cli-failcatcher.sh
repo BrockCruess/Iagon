@@ -1,4 +1,4 @@
-# Don't forget to make this .sh file executable with "chmod +x iag-cli-updater.sh"
+# Don't forget to make this .sh file executable with "chmod +x iag-cli-failcatcher.sh"
 # Set up a cronjob to run this script regularly with "crontab -e"
 #!/bin/bash
 
