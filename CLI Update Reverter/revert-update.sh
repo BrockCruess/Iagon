@@ -16,6 +16,7 @@ fi
 fi
 fi
 
+cd "$(dirname "$0")" && \
 current=v$(./iag-cli-$os --version) && \
 sub=$(echo $current | rev | cut -c 2- | rev) && \
 from=$(echo $current | awk '{print substr($0,length,1)}') && \
