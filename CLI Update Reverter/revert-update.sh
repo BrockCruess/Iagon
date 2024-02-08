@@ -23,7 +23,8 @@ from=$(echo $current | awk '{print substr($0,length,1)}') && \
 to="$((from-1))" && \
 previous="$(echo $sub$to)" && \
 ./iag-cli-$os stop && \
-mv iag-cli-$os iag-cli-$os.$current.bak && \
+mkdir -p version-backups && \
+mv iag-cli-$os version-backups/iag-cli-$os.$current.bak && \
 wget "https://github.com/Iagonorg/mainnet-node-CLI/releases/download/$previous/iag-cli-$os" && \
 chmod +x iag-cli-$os && \
 ./iag-cli-$os start && \
