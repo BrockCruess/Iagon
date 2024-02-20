@@ -1,6 +1,6 @@
 **DOES NOT WORK FOR WINDOWS CLI VERSION**
 
-*This script is useful if you don't run iag-cli as a service, but rather from a scheduled command or shell script.*
+*This script is useful if you don't run iag-cli as a service, but rather from a scheduled command or shell script. In fact, with this script you don't need to schedule iag-cli to run on reboot, because this script will always start the node if it's not running (after 15 minutes).*
 
 Run this command with **your** iag-cli-* file directory to download the CLI Fail Catcher script and schedule it as a crontab job to run every 15 mins:
 
