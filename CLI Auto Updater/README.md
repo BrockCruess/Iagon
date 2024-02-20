@@ -19,3 +19,9 @@ Or set up a cronjob to check for updates daily at midnight by running this comma
 ```
 (crontab -l ; echo "0 0 * * * /bin/bash /your/iagon/directory/iag-cli-updater.sh")| crontab -
 ```
+
+If you run your node as root user, use this instead with **your** script file path:
+
+```
+(sudo crontab -l ; echo "0 0 * * * /bin/bash /your/iagon/directory/iag-cli-updater.sh")| sudo crontab -
+```
