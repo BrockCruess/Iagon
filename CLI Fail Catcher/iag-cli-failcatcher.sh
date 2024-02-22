@@ -26,7 +26,7 @@ if [[ $iagstatus == *"not"* ]]; then
 echo "Iagon Node is not running, restarting it now..."
 ./iag-cli-$os stop && ./iag-cli-$os start
 time=$(date)
-echo "$time: Iagon Node was not running, so it was restarted." >> failures.log && \
+echo "$time: Iagon Storage Node was not running, so it was restarted." >> failures.log && \
 echo " " >> failures.log
 else
 echo "An unknown error occured, please manually kill the Iagon Node process and restart it. Open a support ticket in Iagon's Discord for more help."
