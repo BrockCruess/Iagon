@@ -2,6 +2,8 @@
 
 *This script is useful if you don't run iag-cli as a service, but rather from a scheduled command or shell script.*
 
+<br>
+
 ## Download:
 
 To download the CLI Auto Updater script, run this command in the directory where your iag-cli node file is stored:
@@ -16,6 +18,11 @@ For a manual approach, run this script any time Iagon announces a new cli node u
 ```
 ./iag-cli-updater.sh
 ```
+<br>
+
+All updates will be logged to a file called `updates.log` with a timestamp.
+
+<br>
 
 ## Schedule:
 
@@ -40,6 +47,8 @@ iagDirectory=/directory/where/your/iag-cli-*/file/is/with/no/slash/at/the/end
 cd $iagDirectory
 (sudo crontab -l ; echo "0 0 * * * /bin/bash $iagDirectory/iag-cli-updater.sh")| sudo crontab -
 ```
+
+<br>
 
 ## Update:
 
