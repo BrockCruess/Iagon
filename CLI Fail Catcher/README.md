@@ -9,5 +9,5 @@ Run this command with **your** iag-cli-* file directory to download the CLI Fail
 iagDirectory=/directory/where/your/iag-cli-*/file/is/with/no/slash/at/the/end
 
 cd $iagDirectory
-curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Fail%20Catcher/iag-cli-failcatcher.sh > iag-cli-failcatcher.sh && chmod +x iag-cli-failcatcher.sh && (crontab -l ; echo "*/15 * * * * /bin/bash $iagDirectory/iag-cli-failcatcher.sh")| crontab -
+curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Fail%20Catcher/iag-cli-failcatcher.sh > iag-cli-failcatcher.sh && chmod +x iag-cli-failcatcher.sh && (crontab -l ; echo "*/15 * * * * /bin/bash $iagDirectory/iag-cli-failcatcher.sh") | crontab -
 ```
