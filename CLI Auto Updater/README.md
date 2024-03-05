@@ -32,7 +32,7 @@ Set up a cronjob to check for updates daily at midnight by running this command 
 # Put your node directory after "iagDirectory=", with no slash at the end:
 iagDirectory=/directory/where/your/iag-cli-*/file/is/with/no/slash/at/the/end
 
-(crontab -l ; echo "0 0 * * * /bin/bash $iagDirectory/iag-cli-updater.sh")| crontab -
+(crontab -l ; echo "0 0 * * * cd $iagDirectory && /bin/bash iag-cli-updater.sh")| crontab -
 ```
 
 <br>
@@ -43,7 +43,7 @@ If you run your node as **root** user, use this instead with **your** script fil
 # Put your node directory after "iagDirectory=", with no slash at the end:
 iagDirectory=/directory/where/your/iag-cli-*/file/is/with/no/slash/at/the/end
 
-(sudo crontab -l ; echo "0 0 * * * /bin/bash $iagDirectory/iag-cli-updater.sh")| sudo crontab -
+(sudo crontab -l ; echo "0 0 * * * cd $iagDirectory && /bin/bash iag-cli-updater.sh")| sudo crontab -
 ```
 
 <br>
