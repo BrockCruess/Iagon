@@ -32,7 +32,7 @@ elif [[ $iagstatus == *"not"* ]]; then
         ./iag-cli-$os start
         time=$(date)
         echo " " >> failures.log
-        echo "$time: Iagon Storage Node was not running, so it was restarted." >> failures.log
+        echo "$time: The Iagon Storage Node was frozen, so it was restarted." >> failures.log
     elif [[ $return == *"up"* ]]; then
         time=$(date)
         echo " " >> failures.log
