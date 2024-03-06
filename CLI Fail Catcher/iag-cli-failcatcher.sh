@@ -15,13 +15,13 @@ cd "$(dirname "$0")"
 iagstatus=$(./iag-cli-$os get:status 2>&1)
 
 if [[ $iagstatus == *"up"* ]]; then
-    echo "Iagon Node is running normally!"
+    echo "Iagon Storage Node is running normally!"
 elif [[ $iagstatus == *"not"* ]]; then
-    echo "Iagon Node is not running, restarting it now..."
+    echo "Iagon Storage Node is not running, restarting it now..."
     ./iag-cli-$os stop && \
     return=$(./iag-cli-$os start 2>&1)
     if [[ $return == *"check"* ]]; then
-        echo "The Iagon Node process is frozen, killing and restarting it now..."
+        echo "The Iagon Storage Node process is frozen, killing and restarting it now..."
         tmpfile=$(mktemp processes.tmp.XXXXXX)
         ps -aux | sed -E 's/ +/,/g' > $tmpfile
         pids=$(awk -F "\"*,\"*" '/iagon/{print $2}' "$tmpfile")
@@ -32,8 +32,8 @@ elif [[ $iagstatus == *"not"* ]]; then
         ./iag-cli-$os start
         time=$(date)
         echo " " >> failures.log
-        echo "$time: The Iagon Storage Node was frozen, so it was restarted." >> failures.log
-        echo "The Iagon Storage Node was frozen, so it was restarted."
+        echo "$time: Iagon Storage Node processes were frozen, so they were killed and the node was restarted." >> failures.log
+        echo "Iagon Storage Node processes were frozen, so they were killed and the node was restarted."
     elif [[ $return == *"up"* ]]; then
         time=$(date)
         echo " " >> failures.log
