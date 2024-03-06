@@ -33,6 +33,7 @@ elif [[ $iagstatus == *"not"* ]]; then
         time=$(date)
         echo " " >> failures.log
         echo "$time: The Iagon Storage Node was frozen, so it was restarted." >> failures.log
+        echo "The Iagon Storage Node was frozen, so it was restarted."
     elif [[ $return == *"up"* ]]; then
         time=$(date)
         echo " " >> failures.log
