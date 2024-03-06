@@ -38,6 +38,7 @@ elif [[ $iagstatus == *"not"* ]]; then
         time=$(date)
         echo " " >> failures.log
         echo "$time: Iagon Storage Node was not running, so it was restarted." >> failures.log
+        echo "Iagon Storage Node was not running, so it was restarted."
     fi
 else
    echo "An unknown error occurred, please manually kill the Iagon Node process and restart it. Open a support ticket in Iagon's Discord for more help."
