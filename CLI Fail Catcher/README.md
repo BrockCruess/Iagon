@@ -19,6 +19,15 @@ curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Fail%20Catch
 ```
 
 <br>
-<br>
 
 All failures will be logged to a file called `failures.log` with a timestamp.
+
+<br>
+
+## Update:
+
+If a new version of this script is available, run this command in the directory where your current Fail Catcher script is stored:
+
+```
+curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Fail%20Catcher/iag-cli-failcatcher.sh > iag-cli-failcatcher.sh && chmod +x iag-cli-failcatcher.sh
+```
