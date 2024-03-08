@@ -36,8 +36,8 @@ chmod +x iag-cli-$os && \
 ./iag-cli-$os start && \
 new=v$(./iag-cli-$os --version) && \
 time=$(date) && \
+echo " " >> updates.log && \
 echo "$time: Updated from $current --> $new" >> updates.log && \
-echo " " >> updates.log &&\
 echo && \
 echo "******************" && \
 echo "Iagon Node updated" && \
