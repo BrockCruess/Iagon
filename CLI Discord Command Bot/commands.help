@@ -2,6 +2,10 @@
 Command: `start`
 Description: This command is used to evaluate the node or start the node if it has already been evaluated.
 
+**Restart Node:**
+Command: `restart`
+Description: This command is used to restart your node if it is already running.
+
 **Stop Node:**
 Command: `stop`
 Description: Use this command to stop your node if it is already running.
