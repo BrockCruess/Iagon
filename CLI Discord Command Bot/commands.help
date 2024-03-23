@@ -26,10 +26,6 @@ Description: Check the status of your node.
 Command: `get:verification`
 Description: Obtain the verification status of your node.
 
-**Display Command Help:**
-Command: `help`
-Description: Display help for commands.
-
 **Read/Write Speed Test:**
 Command: `test:rw`
 Description: Perform a read & write speed test.
@@ -37,3 +33,11 @@ Description: Perform a read & write speed test.
 **Upload/Download Speed Test:**
 Command: `test:bw`
 Description: Perform a bandwidth speed test.
+
+**Display All Commands:**
+Command: `commands`
+Description: Display all commands that this bot can accept.
+
+**Display Command Help:**
+Command: `help`
+Description: Display help for commands.
