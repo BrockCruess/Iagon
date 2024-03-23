@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import subprocess
+import requests
 
 # Read Discord token from file
 with open("discord.token", "r") as token_file:
@@ -10,9 +11,13 @@ with open("discord.token", "r") as token_file:
 with open("iag-cli.path", "r") as command_file:
     COMMAND_PATH = command_file.read().strip()
 
-def load_commands_help():
-    with open("commands.help", "r") as help_file:
-        return help_file.read()
+def fetch_commands_help():
+    url = "https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Discord%20Command%20Bot/commands.help"
+    response = requests.get(url)
+    if response.status_code == 200:
+        return response.text
+    else:
+        return "Failed to fetch commands help from GitHub."
 
 # Define Discord intents
 intents = discord.Intents.default()
@@ -32,7 +37,7 @@ async def on_message(message):
 
     # Check if the message is "commands"
     if message.content.lower() == "commands":
-        commands_help = load_commands_help()
+        commands_help = fetch_commands_help()
         await message.channel.send(commands_help)
     else:
         # Check if the message was sent in a private channel
