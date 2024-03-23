@@ -1,0 +1,35 @@
+**Start Node:**
+Command: `start`
+Description: This command is used to evaluate the node or start the node if it has already been evaluated.
+
+**Stop Node:**
+Command: `stop`
+Description: Use this command to stop your node if it is already running.
+
+**Regenerate Authorization Key:**
+Command: `key:regenerate`
+Description: Regenerate the authorization key for your node.
+
+**Get Node Information:**
+Command: `get:info`
+Description: Retrieve information about your node.
+
+**Check Node Status:**
+Command: `get:status`
+Description: Check the status of your node.
+
+**Get Node Verification Status:**
+Command: `get:verification`
+Description: Obtain the verification status of your node.
+
+**Display Command Help:**
+Command: `help`
+Description: Display help for commands.
+
+**Read/Write Speed Test:**
+Command: `test:rw`
+Description: Perform a read & write speed test.
+
+**Upload/Download Speed Test:**
+Command: `test:bw`
+Description: Perform a bandwidth speed test.
