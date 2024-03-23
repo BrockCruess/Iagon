@@ -113,12 +113,12 @@ curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Discord%20Co
 <br/>
 <br/>
 
-## [Click here for the remaining steps for Linux/Mac CLI](https://github.com/BrockCruess/Iagon/tree/main/CLI%20Discord%20Command%20Bot#3a.%20Continued%20instructions%20for%20Linux)
+## [Click here for the remaining steps for Linux/Mac CLI](https://github.com/BrockCruess/Iagon/tree/main/CLI%20Discord%20Command%20Bot#3a-continued-instructions-for-linux)
 
 <br/>
 <br/>
 
-## [Click here for the remaining steps for Windows CLI](https://github.com/BrockCruess/Iagon/tree/main/CLI%20Discord%20Command%20Bot#3b.%20Continued%20instructions%20for%20Windows)
+## [Click here for the remaining steps for Windows CLI](https://github.com/BrockCruess/Iagon/tree/main/CLI%20Discord%20Command%20Bot#3b-continued-instructions-for-windows)
 
 <br/>
 <br/>
