@@ -90,8 +90,7 @@ pip install discord
 ```
 curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Discord%20Command%20Bot/iag-cli-bot.py > iag-cli-bot.py && \
 curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Discord%20Command%20Bot/iag-cli.path > iag-cli.path && \
-curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Discord%20Command%20Bot/discord.token > discord.token && \
-curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Discord%20Command%20Bot/commands.help > command.help
+curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Discord%20Command%20Bot/discord.token > discord.token
 ```
 
 > [!NOTE]
