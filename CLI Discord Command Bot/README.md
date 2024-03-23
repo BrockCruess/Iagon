@@ -35,6 +35,8 @@ This Python bot runs in the same directory as your iag-cli-* file. Any Iagon com
 
 ![image](https://github.com/BrockCruess/Iagon/assets/54557110/fbcbd4cb-f324-4027-b393-499774eb55c4)
 
+- Upload a profile picture for the bot if you like, the [Iagon logo](https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/271204728_1163909397477466_1742846202482471176_n.png?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=G4WjWlt3n3sAX_yJjZh&_nc_ht=scontent-ord5-2.xx&oh=00_AfBukbv9BSDad3zjzTiS894I4Pb0KYaLjoUdxom11A0VSA&oe=66041B94) helps make the bot stand out in your messages list.
+
 - On the Iagon Bot application's page, Navigate to "OAuth2":
 
 ![image](https://github.com/BrockCruess/Iagon/assets/54557110/8182391c-278b-42be-876a-5fc97c28457c)
