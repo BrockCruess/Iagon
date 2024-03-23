@@ -2,6 +2,8 @@
 
 This Python bot runs in the same directory as your iag-cli-* file. Any Iagon commands sent via private message to the bot will be run on your node, and the command outputs will be returned to you via private message.
 
+<br/>
+
 ## Bot setup:
 
 ### 1. Create a new Discord server:
@@ -21,6 +23,7 @@ This Python bot runs in the same directory as your iag-cli-* file. Any Iagon com
 
 
 
+<br/>
 
 ### 2. Create a Discord Bot Token:
 
@@ -28,7 +31,7 @@ This Python bot runs in the same directory as your iag-cli-* file. Any Iagon com
 
 ![image](https://github.com/BrockCruess/Iagon/assets/54557110/d139547e-d7f9-4d3b-859f-f67f901f6c08)
 
-- Name it "Iagon Bot", check the box and click "Create":
+- Name it "Iagon Bot", or if you run multiple nodes add a unique identifier to the name. This name will be the bot's username and I don't think it can be changed later even if you rename the application later. Check the box and click "Create":
 
 ![image](https://github.com/BrockCruess/Iagon/assets/54557110/fbcbd4cb-f324-4027-b393-499774eb55c4)
 
@@ -74,8 +77,13 @@ This Python bot runs in the same directory as your iag-cli-* file. Any Iagon com
 
 - Paste this token in a temporary text file or somewhere accessible for now, we'll need it later.
 
+- While you're on the `Bot` page, disable `PUBLIC BOT`:
+
+![image](https://github.com/BrockCruess/Iagon/assets/54557110/19b84941-f6c5-4a4d-97f6-baa62754a5a5)
 
 
+
+<br/>
 
 ### 3. Set up the Python bot:
 
@@ -88,17 +96,44 @@ pip install discord
 
 - In the same directory as your `iag-cli-*` file, run this command to download all of the bot's files:
 ```
-curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Discord%20Command%20Bot/iag-cli-bot.py > iag-cli-bot.py && \
-curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Discord%20Command%20Bot/iag-cli.path > iag-cli.path && \
+curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Discord%20Command%20Bot/iag-cli-bot.py > iag-cli-bot.py
+curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Discord%20Command%20Bot/iag-cli.path > iag-cli.path
 curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Discord%20Command%20Bot/discord.token > discord.token
+
 ```
 
 > [!NOTE]
-> Stay in this directory for the rest of the steps.
+> Linux/Mac users stay in this directory for the rest of the steps.
 
 - Update the `discord.token` file with your Discord bot token.
 
-- Update the `iag-cli.path` file with the name of your `iag-cli-*` file. The default is the name of the [Linux CLI file](https://github.com/Iagonorg/mainnet-node-CLI/releases/latest/).
+- Update the `iag-cli.path` file with the name of your `iag-cli-*` file. The default is the name of the Linux CLI version. If you're running the Linux or Max CLI versions, keep the `./` before the file name. If you're running the Windows CLI version, please enter `iag-cli-windows.exe` without `./` before it - these symbols are only for bash (Linux/Mac users).
+
+<br/>
+<br/>
+<br/>
+
+## [Click here for the remaining steps for Linux/Mac CLI](https://github.com/BrockCruess/Iagon/tree/main/CLI%20Discord%20Command%20Bot#3a.%20Continued%20instructions%20for%20Linux)
+
+<br/>
+<br/>
+
+## [Click here for the remaining steps for Windows CLI](https://github.com/BrockCruess/Iagon/tree/main/CLI%20Discord%20Command%20Bot#3b.%20Continued%20instructions%20for%20Windows)
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+> [!NOTE]
+> Please make a selection above according to your operating system.
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+## 3a. Continued instructions for Linux
 
 - Run this command to create a start script for the bot:
 ```
@@ -167,4 +202,56 @@ $\color{green}{\textsf{active (running)}}$
 
 
 
-### Go to your Discord bot server and right click your Iagon Bot to send it a message. Send `commands` to the bot and it will send back a list of all commands you can send it.
+### You're done! Go to your Discord bot server and right click your Iagon Bot to send it a message. Send `commands` to the bot and it will send back a list of all commands you can send it.
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+## 3b. Continued instructions for Windows
+
+> [!NOTE]
+> For the Windows CLI version of Iagon Storage Node, I'll assume that you have access to the Windows GUI, and are simply running the Windows CLI version as a more reliable solution for a consumer-grade node running on Windows.
+
+- In File Explorer, navigate to the folder where your iag-cli-windows.exe file and bot files are.
+
+- Create a new text file here called `start-discord-bot.bat`.
+
+If saving from a text editor you'll have to make sure `All files (*.*)` is selected:
+
+![image](https://github.com/BrockCruess/Iagon/assets/54557110/a690e267-0ad5-4595-829c-9e7db0a7f5e6)
+
+If creating the file by right clicking in File Explorer, you may get this prompt. Click `Yes`:
+
+![image](https://github.com/BrockCruess/Iagon/assets/54557110/24899ce3-0fe1-44ce-8d97-57b725ebcd2e)
+
+- Edit `start-discord-bot.bat` and paste the following, then save and close the file:
+```
+@ECHO OFF
+python iag-cli-bot.py
+```
+
+> [!TIP]
+> If `python` is not recognized as a command on your system, you may have to replace it with an absolute path to your Python executable file, depending on how you installed Python. You can look up the file directory where Python is typically installed.
+
+- Create a shortcut to `start-discord-bot.bat`
+
+- Press `Win + R` to open the Run window, type in `shell:startup` and click `OK`:
+
+![image](https://github.com/BrockCruess/Iagon/assets/54557110/1dff0ff6-80d4-4da5-8cfb-3ea22b8c5edf)
+
+- Move your `start-discord-bot.bat` shortcut to the Start-up folder.
+
+- Right click on `start-discord-bot.bat`, open `Properties`, go to the `Shortcut` tab, and set `Run:` to `Minimize` then click `OK`:
+
+![image](https://github.com/BrockCruess/Iagon/assets/54557110/a1daca7b-8584-48c3-8379-3bdd37b46f0e)
+
+- Double click on the `start-discord-bot.bat` shortcut to start the bot. A minimized Command Prompt window will open. The bot will automatically be run this way on startup.
+
+> [!TIP]
+> There are ways to run the Python bot silently in the background without a Command Prompt window staying open, but you can look into that on your own time. I wanted to provide the simplest way to run the bot, and realistically your Iagon node should never be your personal computer so it shouldn't bother you if a Command Prompt window is always minimized.
+
+### You're done! Go to your Discord bot server and right click your Iagon Bot to send it a message. Send `commands` to the bot and it will send back a list of all commands you can send it.
+
+Windows users please be aware that some symbols used by Iagon's CLI node application command outputs are not well handled by Windows, so the symbols will show up something like `[33m-[39m`. There's not much I can do about that, please just ignore them.
