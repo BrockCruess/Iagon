@@ -8,16 +8,17 @@ This Python bot runs in the same directory as your iag-cli-* file. Any Iagon com
 
 ### 1. Create a new Discord server:
 
+- The bot has to be in a server with you to be allowed to send you messages. You don't want anyone else being able to interact with the bot though, so a new private server is needed if you don't already have a private server for your own personal bots.
+
 - Click the + at the bottom of the server list.
 
 ![image](https://github.com/BrockCruess/Iagon/assets/54557110/38c0d805-6d19-4149-847c-f312dad9b879)
 
-- No template is needed as this server will not actually be used for anything, the bot just has to be in a server with you to be allowed to send you messages.
-
-- At the time of writing this the process is:
+- No template is needed. At the time of writing this the process to make a new server is:
   - Click "Create My Own"
   - Click "For me and my friends"
   - Name the server something like "My Bots"
+
 > [!WARNING]
 > Do not invite anyone else to this server. Only invite your own private bots. Anyone in this server can interact with bots in the server, meaning they can send Iagon commands to your node.
 
