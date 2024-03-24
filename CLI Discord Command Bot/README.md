@@ -28,7 +28,7 @@ This Python bot runs in the same directory as your iag-cli-* file. Any Iagon com
 
 ### 2. Create a Discord Bot Token:
 
-- On the [Discord Developer Portal](discord.com/developers/applications), create a New Application:
+- On the [Discord Developer Portal](https://discord.com/developers/applications), create a New Application:
 
 ![image](https://github.com/BrockCruess/Iagon/assets/54557110/d139547e-d7f9-4d3b-859f-f67f901f6c08)
 
