@@ -1,6 +1,7 @@
-**DOES NOT WORK FOR WINDOWS CLI VERSION**
+> [!NOTE]
+> Does not work with the Windows CLI version of Iagon Node.
 
-*This script is useful if you don't run iag-cli as a service, but rather from a scheduled command or shell script.*
+This script is useful if you don't run iag-cli as a service, but rather from a scheduled command or shell script.
 
 <br>
 
