@@ -1,9 +1,9 @@
 > [!NOTE]
 > Does not work with the Windows CLI version of Iagon Node.
 
-*This script is useful if you don't run iag-cli as a service, but rather from a scheduled command or shell script. In fact, with this script you don't need to schedule iag-cli to run on reboot, because this script will always start the node if it's not running (after 15 minutes).*
+This script is useful if you don't run iag-cli as a service, but rather from a scheduled command or shell script. In fact, with this script you don't need to schedule iag-cli to run on reboot, because this script will always start the node if it's not running (after 15 minutes).
 
-*This is meant for nodes running under a regular user, not root. To make it work with root you'll have to use "sudo crontab" anywhere the below command uses "crontab", and type in your root password if prompted.*
+This is meant for nodes running under a regular user, not root. To make it work with root you'll have to use "sudo crontab" anywhere the below command uses "crontab", and type in your root password if prompted.
 
 <br>
 
