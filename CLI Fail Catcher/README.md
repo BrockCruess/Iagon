@@ -17,6 +17,17 @@ iagDirectory=/DirectoryWhereYour/iag-cli-*FileIsWithNoSlashAtTheEnd
 cd $iagDirectory
 curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Fail%20Catcher/iag-cli-failcatcher.sh > iag-cli-failcatcher.sh && chmod +x iag-cli-failcatcher.sh && (crontab -l ; echo "*/15 * * * * cd $iagDirectory && /bin/bash iag-cli-failcatcher.sh") | crontab -
 ```
+<br>
+
+If you run your node as root user, use this instead with your iag-cli-* file directory:
+
+```
+# Put your node directory after "iagDirectory=", with no slash at the end:
+iagDirectory=/DirectoryWhereYour/iag-cli-*FileIsWithNoSlashAtTheEnd
+
+cd $iagDirectory
+curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Fail%20Catcher/iag-cli-failcatcher.sh > iag-cli-failcatcher.sh && chmod +x iag-cli-failcatcher.sh && (sudo crontab -l ; echo "*/15 * * * * cd $iagDirectory && /bin/bash iag-cli-failcatcher.sh") | sudo crontab -
+```
 
 <br>
 
