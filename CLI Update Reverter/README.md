@@ -1,6 +1,9 @@
-**DOES NOT WORK FOR WINDOWS CLI VERSION**
+> [!NOTE]
+> Does not work with the Windows CLI version of Iagon Node.
 
-*This script is useful if you don't run iag-cli as a service, but rather from a scheduled command or shell script.*
+<br>
+
+This script is useful if you don't run iag-cli as a service, but rather from a scheduled command or shell script.
 
 If you're having troubles with a new node version update, run this script to go back one version.
 
