@@ -1,4 +1,5 @@
-**DOES NOT WORK FOR WINDOWS CLI VERSION**
+> [!NOTE]
+> Does not work with the Windows CLI version of Iagon Node.
 
 *This script is useful if you don't run iag-cli as a service, but rather from a scheduled command or shell script. In fact, with this script you don't need to schedule iag-cli to run on reboot, because this script will always start the node if it's not running (after 15 minutes).*
 
