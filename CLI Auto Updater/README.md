@@ -40,17 +40,6 @@ iagDirectory=/directory/where/your/iag-cli-*/file/is/with/no/slash/at/the/end
 
 <br>
 
-If you run your node as **root** user, use this instead with **your** script file path:
-
-```
-# Put your node directory after "iagDirectory=", with no slash at the end:
-iagDirectory=/directory/where/your/iag-cli-*/file/is/with/no/slash/at/the/end
-
-(sudo crontab -l ; echo "0 0 * * * cd $iagDirectory && /bin/bash iag-cli-updater.sh")| sudo crontab -
-```
-
-<br>
-
 ## Update:
 
 If a new version of this script is available, run this command in the directory where your current Auto Updater script is stored:
