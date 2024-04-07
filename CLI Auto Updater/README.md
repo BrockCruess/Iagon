@@ -1,3 +1,11 @@
+> [!IMPORTANT]
+> As of CLI version 1.0.7 this script is no longer necessary, as an update command is now included in the CLI version of Iagon Node.
+> Simply set up a crontab job to run the update command daily and your node will stay up-to-date. Example below:
+
+```
+(crontab -l ; echo "0 0 * * * /path/to/your/iag-cli-*/file update")| crontab -
+```
+
 > [!NOTE]
 > Does not work with the Windows CLI version of Iagon Node.
 
