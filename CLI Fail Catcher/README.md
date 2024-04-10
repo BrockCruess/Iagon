@@ -34,3 +34,8 @@ If a new version of this script is available, run this command in the directory 
 ```
 curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Fail%20Catcher/iag-cli-failcatcher.sh > iag-cli-failcatcher.sh && chmod +x iag-cli-failcatcher.sh
 ```
+<br>
+<br>
+
+> [!TIP]
+> If you'd like to receive an email notification every time your node goes down, set up [mailx](https://linux.die.net/man/1/mailx) on your node server then remove the hashmarks at the start of lines [36](https://github.com/BrockCruess/Iagon/blob/68dac2068726a5a31ecb727a62ac5d0361096d54/CLI%20Fail%20Catcher/iag-cli-failcatcher.sh#L36) and [42](https://github.com/BrockCruess/Iagon/blob/68dac2068726a5a31ecb727a62ac5d0361096d54/CLI%20Fail%20Catcher/iag-cli-failcatcher.sh#L42) in `iag-cli-failcatcher.sh`
