@@ -45,24 +45,76 @@ async def on_message(message):
             print(f"Message received: '{message.content}' from {message.author}")
 
             # Extract the command from the message
-            if message.content.lower() == "test:rw":
+            if message.content.lower() == "test:rw": # Handling for test:rw that inputs the default directory
                 await message.channel.send("Testing read and write speeds in your Iagon storage directory. Please wait...")
                 command = f"echo \"\" | {COMMAND_PATH} {message.content}"
+
+                # Run the command and capture stderr output only
+                try:
+                    result = subprocess.run(command, shell=True, text=True, capture_output=True, timeout=30)
+                    stderr = result.stderr.strip()  # Remove leading/trailing whitespace from stderr
+                except subprocess.CalledProcessError as e:
+                    stderr = str(e.stderr, 'utf-8')
+                except subprocess.TimeoutExpired:
+                    stderr = "Command timed out."
+
+                print(f"Command stderr: '{stderr}'")
+
+                # Send the stderr output back to the user
+                if stderr:
+                    await message.channel.send(stderr)
+                else:
+                    await message.channel.send("No output available")
+            elif message.content.lower() == "version": # Handling for "version", an artificial command alias
+                command = f"{COMMAND_PATH} -V" # Convert "version" to the -V flag to check node version
+
+                # Run the command and capture both stdout and stderr output
+                try:
+                    result = subprocess.run(command, shell=True, text=True, capture_output=True, timeout=30)
+                    stdout = result.stdout.strip()  # Remove leading/trailing whitespace from stdout
+                    stderr = result.stderr.strip()  # Remove leading/trailing whitespace from stderr
+                except subprocess.CalledProcessError as e:
+                    stderr = str(e.stderr, 'utf-8')
+                    stdout = ""
+                except subprocess.TimeoutExpired:
+                    stderr = "Command timed out."
+                    stdout = ""
+
+                print(f"Command stdout: '{stdout}'")
+                print(f"Command stderr: '{stderr}'")
+
+                # Send the output back to the user
+                if stdout:
+                    await message.channel.send(stdout)
+                elif stderr:
+                    await message.channel.send(stderr)
+                else:
+                    await message.channel.send("No output available")
             else:
                 command = f"{COMMAND_PATH} {message.content}"
 
-            # Run the command and capture output
-            try:
-                result = subprocess.run(command, shell=True, text=True, capture_output=True, timeout=30)
-                output = result.stderr
-            except subprocess.CalledProcessError as e:
-                output = str(e.stderr, 'utf-8')
-            except subprocess.TimeoutExpired:
-                output = "Command timed out."
+                # Run the command and capture both stdout and stderr output
+                try:
+                    result = subprocess.run(command, shell=True, text=True, capture_output=True, timeout=30)
+                    stdout = result.stdout.strip()  # Remove leading/trailing whitespace from stdout
+                    stderr = result.stderr.strip()  # Remove leading/trailing whitespace from stderr
+                except subprocess.CalledProcessError as e:
+                    stderr = str(e.stderr, 'utf-8')
+                    stdout = ""
+                except subprocess.TimeoutExpired:
+                    stderr = "Command timed out."
+                    stdout = ""
 
-            print(f"Command output: '{output}'")
-            # Send the output back to the user
-            await message.channel.send(output)
+                print(f"Command stdout: '{stdout}'")
+                print(f"Command stderr: '{stderr}'")
+
+                # Send the output back to the user
+                if stdout:
+                    await message.channel.send(stdout)
+                elif stderr:
+                    await message.channel.send(stderr)
+                else:
+                    await message.channel.send("No output available")
 
 # Start the bot
 bot.run(TOKEN)
