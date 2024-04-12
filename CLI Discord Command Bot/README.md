@@ -233,6 +233,7 @@ If creating the file by right clicking in File Explorer, you may get this prompt
 - Edit `start-discord-bot.bat` and paste the following, then save and close the file:
 ```
 @ECHO OFF
+curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Discord%20Command%20Bot/iag-cli-bot.py > iag-cli-bot.py
 python iag-cli-bot.py
 ```
 
