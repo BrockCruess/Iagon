@@ -45,7 +45,11 @@ async def on_message(message):
             print(f"Message received: '{message.content}' from {message.author}")
 
             # Extract the command from the message
-            command = f"{COMMAND_PATH} {message.content}"
+            if message.content.lower() == "test:rw":
+                await message.channel.send("Testing read and write speeds in your Iagon storage directory. Please wait...")
+                command = f"echo \"\" | {COMMAND_PATH} {message.content}"
+            else:
+                command = f"{COMMAND_PATH} {message.content}"
 
             # Run the command and capture output
             try:
