@@ -234,11 +234,8 @@ If creating the file by right clicking in File Explorer, you may get this prompt
 - Edit `start-discord-bot.bat` and paste the following, then save and close the file:
 ```
 @ECHO OFF
-#curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Discord%20Command%20Bot/iag-cli-bot.py > iag-cli-bot.py
 python iag-cli-bot.py
 ```
-> [!NOTE]
-> To enable auto-updates for the bot, remove the hash mark from the second line of the `.bat` script (starting with "curl"). This may prevent the bot from running if the files are stored somewhere that requires Administrator permission to update files. Put the hashmark back if it causes any issues.
 
 > [!TIP]
 > If `python` is not recognized as a command on your system, you may have to replace it with an absolute path to your Python executable file, depending on how you installed Python. You can look up the file directory where Python is typically installed.
