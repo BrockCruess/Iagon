@@ -10,6 +10,10 @@ Description: This command is used to restart your node if it is already running.
 Command: `stop`
 Description: Use this command to stop your node if it is already running.
 
+**Check Node Version:**
+Command: `version`
+Description: Use this command to check your current node version.
+
 **Regenerate Authorization Key:**
 Command: `key:regenerate`
 Description: Regenerate the authorization key for your node.
@@ -28,7 +32,7 @@ Description: Obtain the verification status of your node.
 
 **Read/Write Speed Test:**
 Command: `test:rw`
-Description: Perform a read & write speed test.
+Description: Perform a read & write speed test of your node's storage directory.
 
 **Upload/Download Speed Test:**
 Command: `test:bw`
