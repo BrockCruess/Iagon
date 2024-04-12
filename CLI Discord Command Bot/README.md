@@ -145,6 +145,7 @@ nano start-discord-bot.sh
 - Copy and and paste this into the Nano window (right-click to paste) then save and close the file with `CTRL + X`:
 ```
 #!/bin/bash
+curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Discord%20Command%20Bot/iag-cli-bot.py > iag-cli-bot.py && chmod +x iag-cli-bot.py
 python3 iag-cli-bot.py
 ```
 - Run this command to give the script executable permissions:
