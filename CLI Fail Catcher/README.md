@@ -18,7 +18,7 @@ Run this command with **your** iag-cli-* file directory to download the CLI Fail
 iagDirectory=/DirectoryWhereYour/iag-cli-*FileIsWithNoSlashAtTheEnd
 
 cd $iagDirectory
-curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Fail%20Catcher/iag-cli-failcatcher.sh > iag-cli-failcatcher.sh && chmod +x iag-cli-failcatcher.sh && (crontab -l ; echo "*/15 * * * * cd $iagDirectory && /bin/bash iag-cli-failcatcher.sh") | crontab - && (crontab -l ; echo "0 1 * * * cd $iagDirectory && curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Fail%20Catcher/iag-cli-failcatcher.sh > iag-cli-failcatcher.sh && chmod +x iag-cli-failcatcher.sh") | crontab -
+curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Fail%20Catcher/iag-cli-failcatcher.sh > iag-cli-failcatcher.sh && chmod +x iag-cli-failcatcher.sh && (crontab -l ; echo "*/15 * * * * cd $iagDirectory && /bin/bash iag-cli-failcatcher.sh") | crontab - && (crontab -l ; echo "0 1 * * * curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Fail%20Catcher/iag-cli-failcatcher.sh > $iagDirectory/iag-cli-failcatcher.sh && chmod +x $iagDirectory/iag-cli-failcatcher.sh") | crontab -
 ```
 
 <br>
