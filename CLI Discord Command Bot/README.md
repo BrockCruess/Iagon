@@ -113,31 +113,14 @@ curl https://raw.githubusercontent.com/BrockCruess/Iagon/main/CLI%20Discord%20Co
 - Update the `iag-cli.path` file with the name of your `iag-cli-*` file. The default is the name of the Linux CLI version. If you're running the Linux or Max CLI versions, keep the `./` before the file name. If you're running the Windows CLI version, please enter `iag-cli-windows.exe` without `./` before it - these symbols are only for bash (Linux/Mac users).
 
 <br/>
-<br/>
-<br/>
-
-## [Click here for the remaining steps for Linux/Mac CLI](https://github.com/BrockCruess/Iagon/tree/main/CLI%20Discord%20Command%20Bot#3a-continued-instructions-for-linux)
-
-<br/>
-<br/>
-
-## [Click here for the remaining steps for Windows CLI](https://github.com/BrockCruess/Iagon/tree/main/CLI%20Discord%20Command%20Bot#3b-continued-instructions-for-windows)
-
-<br/>
-<br/>
-<br/>
-<br/>
 
 > [!NOTE]
-> Please make a selection above according to your operating system.
+> <h4>Please make a selection below according to your operating system:</h4>
 
-<br/>
-<br/>
-<br/>
-<br/>
-
-## 3a. Continued instructions for Linux
-
+<details>
+<summary><h3>3a. Continued instructions for Linux</h3></summary>
+<br>
+  
 - Run this command to create a start script for the bot:
 ```
 nano start-discord-bot.sh
@@ -154,12 +137,12 @@ python3 iag-cli-bot.py
 chmod +x start-discord-bot.sh
 ```
 
-> [!TIP]
+> **TIP:**
 > From this point on, anywhere you see `python3` used in a command, you may have to replace it with an absolute path to your Python executable file, depending on how you installed Python.
 > 
 > It's recommended that you test running `python3 iag-cli-bot.py` to see if Python successfully executes the script to start the bot. If it doesn't, try providing an absolute path like `/usr/bin/python3 iag-cli-bot.py`. Whichever works, use it for the following steps.
 
-> [!NOTE]
+> **NOTE:**
 > If you're using the root user to run your Iagon Node (typically not recommended), you might not need `sudo` in the following commands.
 
 - Run this command to create a new systemd service for the bot's start script:
@@ -211,12 +194,13 @@ $\color{green}{\textsf{active (running)}}$
 
 <br/>
 <br/>
-<br/>
-<br/>
+</details>
 
-## 3b. Continued instructions for Windows
+<details>
+<summary><h3>3b. Continued instructions for Windows</h3></summary>
+<br>
 
-> [!NOTE]
+> **NOTE:**
 > For the Windows CLI version of Iagon Storage Node, I'll assume that you have access to the Windows GUI, and are simply running the Windows CLI version as a more reliable solution for a consumer-grade node running on Windows.
 
 - In File Explorer, navigate to the folder where your iag-cli-windows.exe file and bot files are.
@@ -237,7 +221,7 @@ If creating the file by right clicking in File Explorer, you may get this prompt
 python iag-cli-bot.py
 ```
 
-> [!TIP]
+> **TIP:**
 > If `python` is not recognized as a command on your system, you may have to replace it with an absolute path to your Python executable file, depending on how you installed Python. You can look up the file directory where Python is typically installed.
 
 - Create a shortcut to `start-discord-bot.bat`
@@ -254,9 +238,11 @@ python iag-cli-bot.py
 
 - Double click on the `start-discord-bot.bat` shortcut to start the bot. A minimized Command Prompt window will open. The bot will automatically be run this way on startup.
 
-> [!TIP]
+> **TIP:**
 > There are ways to run the Python bot silently in the background without a Command Prompt window staying open, but you can look into that on your own time. I wanted to provide the simplest way to run the bot, and realistically your Iagon node should never be your personal computer so it shouldn't bother you if a Command Prompt window is always minimized.
 
 ### You're done! Go to your Discord bot server and right click your Iagon Bot to send it a message. Send `commands` to the bot and it will send back a list of all commands you can send it.
 
 Windows users please be aware that some symbols used by Iagon's CLI node application command outputs are not well handled by Windows, so the symbols will show up something like `[33m-[39m`. There's not much I can do about that, please just ignore them.
+
+</details>
