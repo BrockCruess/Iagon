@@ -1,4 +1,4 @@
-<br/>![Iagon Logo](https://docs.iagon.com/assets/images/iagon-logo-dark-00f5535e8d35544d908b7936e065a536.png)
+<br/>![Iagon Logo](https://github.com/BrockCruess/Iagon/assets/54557110/42dc9ed2-e505-4661-888a-47c4592a1292)
 
 <br/>
 <br/>
