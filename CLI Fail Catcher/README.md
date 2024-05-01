@@ -1,3 +1,7 @@
+<h1 align="center">
+CLI Fail Catcher<br/><br/>
+</h1>
+
 > [!NOTE]
 > Does not work with the Windows CLI version of Iagon Node.
 
