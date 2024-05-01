@@ -2,44 +2,48 @@
 # Run this script in the same directory as your iag-cli node file to go back one node version
 #!/bin/bash
 
-uname=$(uname)
-
-if test "$uname" = "FreeBSD"
-then os=freebsd
-else
-if test "$uname" = "Linux"
-then os=linux
-else
-if test "$uname" = "Darwin"
-then os=macos
+UNAME=$(uname)
+if test "$UNAME" = "FreeBSD"; then
+    OS=freebsd
+elif test "$UNAME" = "Linux"; then
+    OS=linux
+elif test "$UNAME" = "Darwin"; then
+    OS=macos
 fi
-fi
-fi
-
-cd "$(dirname "$0")" && \
-current=v$(./iag-cli-$os --version) && \
-sub=$(echo $current | rev | cut -c 2- | rev) && \
-from=$(echo $current | awk '{print substr($0,length,1)}') && \
-to="$((from-1))" && \
-previous="$(echo $sub$to)" && \
-./iag-cli-$os stop && \
+SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )" && \
+cd $SCRIPTPATH && \
+CURRENT=v$(./iag-cli-$OS --version) && \
+SUB=$(echo $CURRENT | rev | cut -c 2- | rev) && \
+FROM=$(echo $CURRENT | awk '{print substr($0,length,1)}') && \
+TO="$((FROM-1))" && \
+PREVIOUS="$(echo $SUB$TO)" && \
+echo "" && \
+echo "Would you like to revert from $CURRENT to $PREVIOUS?" && \
+echo "Please input 1 for Yes or 2 for No:" && \
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) echo "" && echo "Reverting now..." && echo ""; break;;
+        No ) echo "" && echo "Okay, bye!" && echo "" && exit;;
+    esac
+done
+./iag-cli-$OS stop && \
 mkdir -p version-backups && \
-mv iag-cli-$os version-backups/iag-cli-$os.$current.bak && \
-wget "https://github.com/Iagonorg/mainnet-node-CLI/releases/download/$previous/iag-cli-$os" && \
-chmod +x iag-cli-$os && \
-./iag-cli-$os start && \
-new=v$(./iag-cli-$os --version) && \
-time=$(date) && \
-echo "$time: Reverted from $current --> $new" >> updates.log && \
-echo " " >> updates.log &&\
-echo && \
+mv "iag-cli-$OS" "version-backups/iag-cli-$OS.$CURRENT.bak" && \
+wget -q "https://github.com/Iagonorg/mainnet-node-CLI/releases/download/$PREVIOUS/iag-cli-$OS" && \
+chmod +x "iag-cli-$OS" && \
+./iag-cli-$OS start && \
+NEW="v$(./iag-cli-$OS --version)" && \
+TIME=$(date) && \
+echo "" >> updates.log && \
+echo "$TIME: Reverted from $CURRENT --> $NEW" >> updates.log && \
+echo "" && \
 echo "*******************" && \
 echo "Iagon Node reverted" && \
 echo "*******************" && \
-echo && \
+echo "" && \
 echo "Previous version:" && \
-echo $current && \
-echo && \
+echo $CURRENT && \
+echo "" && \
 echo "Current version:" && \
-echo $new && \
-echo 
+echo $NEW && \
+echo ""
