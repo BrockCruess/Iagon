@@ -1,4 +1,6 @@
-# Iagon Discord Command Bot
+<h1 align="center">
+Iagon Discord Command Bot<br/><br/>
+</h1>
 
 This Python bot runs in the same directory as your iag-cli-* file. Any Iagon commands sent via private message to the bot will be run on your node, and the command outputs will be returned to you via private message.
 
