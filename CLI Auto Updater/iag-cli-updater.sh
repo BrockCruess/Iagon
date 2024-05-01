@@ -2,51 +2,54 @@
 # Run this any time Iagon announces a new cli node update, or set up a cronjob to run it daily/weekly/monthly "crontab -e"
 #!/bin/bash
 
-uname=$(uname)
+UNAME=$(uname)
 
-if test "$uname" = "FreeBSD"
-then os=freebsd
+if test "$UNAME" = "FreeBSD"
+then OS=freebsd
 else
-if test "$uname" = "Linux"
-then os=linux
+if test "$UNAME" = "Linux"
+then OS=linux
 else
-if test "$uname" = "Darwin"
-then os=macos
+if test "$UNAME" = "Darwin"
+then OS=macos
 fi
 fi
 fi
 
-latest=$(curl https://api.github.com/repos/Iagonorg/mainnet-node-CLI/releases/latest | grep -o -P -m 1 'v.{0,5}') && \
-current=v$(./iag-cli-$os --version) && \
-
-if test "$current" = "$latest"
-then
-echo && \
+LATEST=$(curl https://api.github.com/repos/Iagonorg/mainnet-node-CLI/releases/latest | grep -o -P -m 1 'v.{0,5}') && \
+CURRENT=v$(./iag-cli-$OS --version) && \
+SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )" && \
+if test "$CURRENT" = "$LATEST"; then
+echo "" && \
 echo "***********************" && \
 echo "No new update available" && \
 echo "***********************" && \
-echo 
+echo ""
+elif test "$CURRENT" = ""; then
+echo "" && \
+echo "An error occured when attempting to check Iagon Node version. Did you rename the node file? Is it executable?" && \
+echo ""
 else
-cd "$(dirname "$0")" && \
-./iag-cli-$os stop && \
+cd $SCRIPTPATH && \
+./iag-cli-$OS stop && \
 mkdir -p version-backups && \
-mv iag-cli-$os version-backups/iag-cli-$os.$current.bak && \
-wget "https://github.com/Iagonorg/mainnet-node-CLI/releases/download/$latest/iag-cli-$os" && \
-chmod +x iag-cli-$os && \
-./iag-cli-$os start && \
-new=v$(./iag-cli-$os --version) && \
-time=$(date) && \
-echo " " >> updates.log && \
-echo "$time: Updated from $current --> $new" >> updates.log && \
-echo && \
+mv iag-cli-$OS version-backups/iag-cli-$OS.$CURRENT.bak && \
+wget "https://github.com/Iagonorg/mainnet-node-CLI/releases/download/$LATEST/iag-cli-$OS" && \
+chmod +x iag-cli-$OS && \
+./iag-cli-$OS start && \
+NEW=v$(./iag-cli-$OS --version) && \
+TIME=$(date) && \
+echo "" >> updates.log && \
+echo "$TIME: Updated from $CURRENT --> $NEW" >> updates.log && \
+echo "" && \
 echo "******************" && \
 echo "Iagon Node updated" && \
 echo "******************" && \
-echo && \
+echo "" && \
 echo "Old version:" && \
-echo $current && \
-echo && \
+echo $CURRENT && \
+echo "" && \
 echo "New version:" && \
-echo $new && \
-echo 
+echo $NEW && \
+echo ""
 fi
