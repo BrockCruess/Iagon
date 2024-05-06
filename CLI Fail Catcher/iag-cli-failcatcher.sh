@@ -33,13 +33,13 @@ elif [[ $iagstatus == *"not"* ]]; then
         time=$(date)
         echo " " >> failures.log
         echo "$time: Iagon Storage Node processes were frozen, so they were killed and the node was restarted." >> failures.log
-#        echo "Iagon Storage Node processes were frozen, so they were killed and the node was restarted." | mailx -s "Iagon Node Alert"
+#        python3 discord-notification.py
         echo "Iagon Storage Node processes were frozen, so they were killed and the node was restarted."
     elif [[ $return == *"up"* ]]; then
         time=$(date)
         echo " " >> failures.log
         echo "$time: Iagon Storage Node was not running, so it was restarted." >> failures.log
-#        echo "Iagon Storage Node was not running, so it was restarted." | mailx -s "Iagon Node Alert"
+#        python3 discord-notification.py
         echo "Iagon Storage Node was not running, so it was restarted."
     fi
 else
