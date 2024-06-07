@@ -34,15 +34,13 @@ elif [[ $IAGSTATUS == *"not"* ]]; then
         done
         ./iag-cli-$OS start >/dev/null 2>&1
         TIME=$(date)
-        echo "" >> failures.log
-        echo "$TIME: Iagon Storage Node processes were frozen, so they were killed and the node was restarted." >> failures.log
+        printf "\n$TIME: Iagon Storage Node processes were frozen, so they were killed and the node was restarted." >> failures.log
 #        /usr/bin/python3 /path/to/your/discord-notification.py >/dev/null 2>&1 # Update this with the correct full path to your Python file (run "which python3" to find it) and the full path to your discord-notification.py file
         echo "Iagon Storage Node processes were frozen, so they were killed and the node was restarted."
     # If restarting the node was successful, problem solved, log the event:
     elif [[ $RETURN == *"started"* ]]; then
         TIME=$(date)
-        echo "" >> failures.log
-        echo "$TIME: Iagon Storage Node was not running, so it was restarted." >> failures.log
+        printf "\n$TIME: Iagon Storage Node was not running, so it was restarted." >> failures.log
 #        /usr/bin/python3 /path/to/your/discord-notification.py >/dev/null 2>&1 # Update this with the correct full path to your Python file (run "which python3" to find it) and the full path to your discord-notification.py file
         echo "Iagon Storage Node was not running, so it was restarted."
     fi
