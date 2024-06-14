@@ -3,7 +3,7 @@
 > Simply set up a crontab job to run the update command daily and your node will stay up-to-date. Example below:
 
 ```
-(crontab -l ; echo "0 0 * * * /path/to/your/iag-cli-*/file update")| crontab -
+(crontab -l ; echo "0 0 * * * /bin/bash /path/to/your/iag-cli-file update")| crontab -
 ```
 <br>
 <br>
