@@ -93,7 +93,7 @@ async def on_message(message):
                     await message.channel.send("No output available")
             else:
                 command = f"{COMMAND_PATH} {message.content}"
-                await message.channel.send(f"Running {message.content} command...")
+                await message.channel.send(f"Running '{message.content}' command...")
 
                 # Run the command and capture both stdout and stderr output
                 try:
