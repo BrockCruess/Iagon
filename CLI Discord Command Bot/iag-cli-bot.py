@@ -67,6 +67,7 @@ async def on_message(message):
                     await message.channel.send("No output available")
             elif message.content.lower() == "version": # Handling for "version", an artificial command alias
                 command = f"{COMMAND_PATH} -V" # Convert "version" to the -V flag to check node version
+                await message.channel.send(f"Checking version...")
 
                 # Run the command and capture both stdout and stderr output
                 try:
