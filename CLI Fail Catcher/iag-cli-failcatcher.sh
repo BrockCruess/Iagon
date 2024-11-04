@@ -6,7 +6,12 @@ UNAME=$(uname)
 if test "$UNAME" = "FreeBSD"; then
     OS=freebsd
 elif test "$UNAME" = "Linux"; then
-    OS=linux
+    UNAME_ARCH=$(uname -m)
+    if test "$UNAME_ARCH" = "aarch64"; then
+        OS=linux-arm
+    else
+        OS=linux
+    fi
 elif test "$UNAME" = "Darwin"; then
     OS=macos
 fi
