@@ -3,6 +3,7 @@ from discord.ext import commands
 import subprocess
 import requests
 import asyncio
+
 # Read Discord token from file
 with open("discord.token", "r") as token_file:
     TOKEN = token_file.read().strip()
@@ -54,7 +55,6 @@ async def change_presence_loop():
         # Update presence with the status every 5 mins
         await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=status))
         await asyncio.sleep(300)
-
 
 @bot.event
 async def on_message(message):
