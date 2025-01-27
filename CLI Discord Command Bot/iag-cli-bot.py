@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import subprocess
 import requests
-
+import asyncio
 # Read Discord token from file
 with open("discord.token", "r") as token_file:
     TOKEN = token_file.read().strip()
@@ -29,6 +29,37 @@ bot = commands.Bot(command_prefix='', intents=intents)
 @bot.event
 async def on_ready():
     print(f'Logged in as {bot.user}')
+    # Create a task for the presence loop instead of calling directly
+    asyncio.create_task(change_presence_loop())
+
+async def change_presence_loop():
+    while True:
+        command = f"{COMMAND_PATH} get:status"
+        # Run the command and capture both stdout and stderr output
+        try:
+            result = subprocess.run(command, shell=True, text=True, capture_output=True, timeout=30)
+            stdout = result.stdout.strip()  # Remove leading/trailing whitespace from stdout
+            stderr = result.stderr.strip()  # Remove leading/trailing whitespace from stderr
+        except subprocess.CalledProcessError as e:
+            stderr = str(e.stderr, 'utf-8')
+            stdout = ""
+        except subprocess.TimeoutExpired:
+            stderr = "Command timed out."
+            stdout = ""
+
+        print(f"Command stdout: '{stdout}'")
+        print(f"Command stderr: '{stderr}'")
+        print(f"stdout: {stdout}")
+        print(f"stderr: {stderr}")
+        # check if stderr is has Node is up and running
+        if "Node is up and running" in stderr:
+            status = "online"
+        else:
+            status = "offline"
+        # Update presence with the status
+        await bot.change_presence(activity=discord.Game(name=status))
+        await asyncio.sleep(120)
+
 
 @bot.event
 async def on_message(message):
@@ -94,7 +125,6 @@ async def on_message(message):
             else:
                 command = f"{COMMAND_PATH} {message.content}"
                 await message.channel.send(f"Running `{message.content}` command...")
-
                 # Run the command and capture both stdout and stderr output
                 try:
                     result = subprocess.run(command, shell=True, text=True, capture_output=True, timeout=30)
