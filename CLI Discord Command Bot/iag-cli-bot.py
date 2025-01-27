@@ -46,19 +46,14 @@ async def change_presence_loop():
         except subprocess.TimeoutExpired:
             stderr = "Command timed out."
             stdout = ""
-
-        print(f"Command stdout: '{stdout}'")
-        print(f"Command stderr: '{stderr}'")
-        print(f"stdout: {stdout}")
-        print(f"stderr: {stderr}")
-        # check if stderr is has Node is up and running
-        if "Node is up and running" in stderr:
-            status = "online"
+        # Check if stderr is has Node is up and running
+        if "up" in stderr:
+            status = "Node: Online"
         else:
-            status = "offline"
-        # Update presence with the status
-        await bot.change_presence(activity=discord.Game(name=status))
-        await asyncio.sleep(120)
+            status = "Node: Offline"
+        # Update presence with the status every 5 mins
+        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=status))
+        await asyncio.sleep(300)
 
 
 @bot.event
