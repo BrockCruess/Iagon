@@ -96,7 +96,7 @@ This Python bot runs in the same directory as your iag-cli-* file. Any Iagon com
 
 - Install the required Python packages:
 ```
-pip install discord requests
+sudo apt install python3-requests python3-discord
 ```
 
 - In the same directory as your `iag-cli-*` file, run this command to download all of the bot's files:
